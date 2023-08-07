@@ -1,0 +1,27 @@
+# data pre-process
+fixed_vol_path: "/content/drive/MyDrive/Colab Notebooks/ETHZ/data/case02/case2_T00-ssm.mha" # fixed volumn path
+min_val: 0 # min value for the original CT
+std_val: 4247 # range value for the original CT
+num_repeat: 1 # repeat time per epoch
+
+# net
+moving_vol_path: "/content/drive/MyDrive/Colab Notebooks/ETHZ/data/case02/case2_T50-ssm.mha"
+netdepth: 8 # layers in network
+netwidth: 256 # channels per layer
+multires: 10 # log2 of max freq for positional encoding (3D location)
+
+# hyper-parameters
+num_epochs: 24 # Number of epochs to train over
+batch_size: 2048 # Size of each mini-batch 
+lr: 0.00012 # Learning rate
+lambda_jacob: 0.05
+num_step_opt: 1 # frequency of optimization over steps
+num_step_log: 10 # frequency of optimization over steps
+num_step_val: 400 # frequency of validation per steps
+num_val_planes: 4 # number of validation images
+chunk_size: 32768 # 512 * 64 
+num_epoch_save: 1 # frequency of saving model per epoch
+
+# data visual
+ckpt_nvf_path: "/content/drive/MyDrive/Colab Notebooks/ETHZ/check/case02/case02.pth"
+save_path: "/content/drive/MyDrive/Colab Notebooks/ETHZ/check/case02/"
